@@ -2,6 +2,9 @@ cmake_minimum_required(VERSION 3.0.0)
 project(dlcpp VERSION 0.1.0)
 set(CMAKE_CXX_STANDARD 17)
 
+set(CMAKE_BUILD_TYPE Release)
+set(CMAKE_CXX_FLAGS "-O3")
+
 set(Python3_ROOT_DIR /home/liumu/anaconda3/envs/DL)
 find_package(Python3 COMPONENTS Interpreter Development NumPy)
 include_directories(${Python3_INCLUDE_DIRS} ${Python3_NumPy_INCLUDE_DIRS})

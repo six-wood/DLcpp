@@ -39,7 +39,7 @@ X = torch.rand(size=(1, 1, 224, 224))
 for layer in net:
     X = layer(X)
     print(layer.__class__.__name__, "output shape:\t", X.shape)
-dataPath = "/home/liumu/code/DLTurtle/linearNet/data/"
+dataPath = "/home/liumu/code/DLcpp/linearNet/data/"
 
 
 trans = torchvision.transforms.Compose(
@@ -74,6 +74,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 net.to(device)
 
 for epoch in range(5):
+    acc = 0
     for X, y in train_iter:
         X, y = X.to(device), y.to(device)
         y_hat = net(X)
